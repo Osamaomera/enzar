@@ -1,6 +1,6 @@
 param(
-  [string]$ResourceGroupName = "azure_vm",
-  [string]$VMName = "OpenProject"
+  [string]$ResourceGroupName = "test",
+  [string]$VMName = "test-vm"
 )
 
 # Get current time in KSA (Arabian Standard Time)
@@ -25,4 +25,3 @@ if ($hour -ge 9 -and $hour -lt 17) {
     Write-Output "Current time $currentKsaTime — Stopping VM"
     Stop-AzVM -ResourceGroupName $ResourceGroupName -Name $VMName -Force
 }
-
